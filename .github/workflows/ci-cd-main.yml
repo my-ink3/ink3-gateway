@@ -95,7 +95,7 @@ jobs:
       RABBITMQ_PORT: ${{ secrets.RABBITMQ_PORT }}
       RABBITMQ_USERNAME: ${{ secrets.RABBITMQ_USERNAME }}
       RABBITMQ_PASSWORD: ${{ secrets.RABBITMQ_PASSWORD }}
-      EUREKA_URL: ${{ secrets.DEV_EUREKA_URL }}
+      EUREKA_URL: ${{ secrets.EUREKA_URL }}
       REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
 
     services:
