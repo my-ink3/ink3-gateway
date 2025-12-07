@@ -138,6 +138,9 @@ jobs:
             --spring.profiles.active=test \
             --spring.cloud.bus.enabled=false \
             --spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration,org.springframework.cloud.bus.BusAutoConfiguration \
+            --eureka.client.enabled=false \
+            --eureka.client.register-with-eureka=false \
+            --eureka.client.fetch-registry=false \
             > app.log 2>&1 &
           echo $! > app.pid
 
@@ -158,10 +161,14 @@ jobs:
           mvn test -B
           -Dspring.cloud.bus.enabled=false
           -Dspring.autoconfigure.exclude=org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration,org.springframework.cloud.bus.BusAutoConfiguration
+          -Deureka.client.enabled=false
+          -Deureka.client.register-with-eureka=false
+          -Deureka.client.fetch-registry=false
 
       - name: Print app log if health check fails
         if: failure()
         run: cat app.log
+
 
 
   deploy:
