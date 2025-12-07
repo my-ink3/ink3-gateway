@@ -138,9 +138,10 @@ jobs:
           -Deureka.client.register-with-eureka=false
           -Deureka.client.fetch-registry=false
           -Dspring.cloud.config.enabled=false
-          -Dspring.config.import=optional:
+          -Dspring.cloud.config.import-check.enabled=false
           -Dspring.data.redis.password=
           -Dmanagement.health.redis.enabled=false
+
 
 
 
