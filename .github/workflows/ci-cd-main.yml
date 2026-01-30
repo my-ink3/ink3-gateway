@@ -204,3 +204,4 @@ jobs:
             export RABBITMQ_PASSWORD=${{ secrets.RABBITMQ_PASSWORD }}
             nohup ./deploy.sh > deploy.log 2>&1 &
             exit 0
+
